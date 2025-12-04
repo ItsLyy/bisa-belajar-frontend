@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-100: #16161A;
+  --color-app-150: #1C1E27;
+  --color-app-200: #1A4CD3;
+  --color-app-300: #7B7F93;
+  --color-app-400: #9EA3BF;
+  --color-app-500: #BBC1E1;
+}
+
+html {
+  background-color: var(--color-app-100);
+  color: var(--color-app-300);
+}
