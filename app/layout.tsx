@@ -1,6 +1,17 @@
-import type { Metadata } from "next";
+/**
+ * Node Modules
+ */
 import { Roboto } from "next/font/google";
+
+/**
+ * Styles
+ */
 import "./globals.css";
+
+/**
+ * Types
+ */
+import type { Metadata } from "next";
 
 const roboto = Roboto({
   variable: "--font-robot-sans",
