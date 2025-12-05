@@ -20,7 +20,7 @@ const RequestList = () => {
     <Swiper
         slidesPerView={1.55}
         spaceBetween={8}
-        className="relative"
+        className="relative z-0"
     >
         <SwiperSlide>
             <RequestCard name="John Smith" id="user-john" score={52} skills={[]} avatar_path="" />
