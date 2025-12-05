@@ -5,7 +5,6 @@ import Card from '@/app/_components/ui/card'
 import Header from './header'
 import Content from './content'
 import Footer from './footer'
-import Link from 'next/link'
 
 /**
  * Types
@@ -22,13 +21,11 @@ interface IPostCardProps extends TPostData {
 
 const PostCard = ({ id, title, content, timestamps, photo_url, user, priority = false }: IPostCardProps) => {
   return (
-    <Link href={`/post/${id}`}>
       <Card className='bg-transparent border-2 border-app-150 p-4 space-y-4'>
           <Header id={user.id} name={user.name} skills={user.skills?.map(skill => skill.name)} />
-          <Content title={title} content={content} photoUrl={photo_url} priority={priority} />
+          <Content title={title} postId={id} content={content} photoUrl={photo_url} priority={priority} />
           <Footer threads={20} date={timestamps} />
       </Card>
-    </Link>
   )
 }
 
