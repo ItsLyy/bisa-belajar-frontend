@@ -1,7 +1,8 @@
 /**
  * Components
  */
-import RequestList from '../request-list'
+
+import RequestList from "../request-list"
 
 const SwapRequestSection = () => {
   return (
