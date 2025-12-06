@@ -12,4 +12,9 @@
 html {
   background-color: var(--color-app-100);
   color: var(--color-app-300);
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
