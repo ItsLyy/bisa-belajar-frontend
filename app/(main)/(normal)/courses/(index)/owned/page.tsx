@@ -2,7 +2,6 @@
  * Compoenents
  */
 import CourseList from "@/app/_components/general/course-list";
-import Pagination from "@/app/_components/general/pagination";
 import Link from "next/link";
 
 /**
