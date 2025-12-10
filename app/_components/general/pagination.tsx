@@ -1,9 +1,32 @@
+"use client"
+
 /**
  * Node Modules
  */
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
 
-const Pagination = ({ page, searchParams }: { page: number; searchParams?: { [key: string]: string | undefined } }) => {
+interface IPaginationProps {
+    page: number; 
+    pathname?: string
+    searchParams?: { [key: string]: string | undefined }
+}
+
+const Pagination = ({ pathname = "" }: IPaginationProps ) => {
+    const searchParams = useSearchParams();
+    const page = parseInt(searchParams.get("page") || "1");
+    
+    const createQueryString = useCallback(
+        (name: string, value: string) => {
+          const params = new URLSearchParams(searchParams.toString())
+          params.set(name, value)
+     
+          return params.toString()
+        },
+        [searchParams]
+      )
+
     const previousPageNumber = page - 1;
     const currentPageNumber = page;
     const nextPageNumber = page + 1;
@@ -14,11 +37,8 @@ const Pagination = ({ page, searchParams }: { page: number; searchParams?: { [ke
             previousPageNumber > 0 && 
             <Link 
                 href={{
-                    pathname: '/discovery/search',
-                    query: {
-                        ...searchParams,
-                        page: previousPageNumber,
-                    }
+                    pathname,
+                    search: createQueryString("page", previousPageNumber.toString()),
                 }} 
                 shallow
                 className='size-12 rounded-md flex items-center justify-center'
@@ -31,11 +51,8 @@ const Pagination = ({ page, searchParams }: { page: number; searchParams?: { [ke
         </div>
         <Link 
             href={{
-                pathname: '/discovery/search',
-                query: {
-                    ...searchParams,
-                    page: nextPageNumber,
-                },
+                pathname,
+                search: createQueryString("page", nextPageNumber.toString()),
             }}
             shallow
             className='size-12 rounded-md flex items-center justify-center'

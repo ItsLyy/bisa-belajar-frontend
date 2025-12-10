@@ -11,7 +11,7 @@ import Tags from "./tags"
 
 const CourseCard = () => {
   return (
-    <Link href={`/`} className="flex flex-col overflow-hidden rounded-xl border border-app-300/20">
+    <Link href={`/courses/slug`} className="flex flex-col overflow-hidden rounded-xl border border-app-300/20">
         <div className="aspect-video w-full relative">
             <Image src={`/`} alt="course" fill sizes="(max-width: 768px) 100vw, 50vw" />
         </div>
