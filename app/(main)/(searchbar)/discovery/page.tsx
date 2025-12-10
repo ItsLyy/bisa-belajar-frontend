@@ -2,9 +2,9 @@
  * Components
  */
 import Link from "next/link";
-import CourseList from "./_components/course-list";
-import ProfileList from "./_components/profile-list";
-import Pagination from "./_components/pagination";
+import CourseList from "../../../_components/general/course-list";
+import ProfileList from "../../../_components/general/profile-list";
+import Pagination from "../../../_components/general/pagination";
 
 
 
