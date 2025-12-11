@@ -20,7 +20,7 @@ export default async function ChatDetailPage({ params }: IChatDetailPage) {
     return (
         <section className="flex flex-col h-[94svh]">
             <header className="border-b border-b-app-300/20 shrink-0 sticky top-0 left-0 right-0">
-                <Link href={`/profiles/${name}`} className="py-4 px-2 flex items-center gap-4 ">
+                <Link href={`/profile/${name}`} className="py-4 px-2 flex items-center gap-4 ">
                     <Avatar name={decodeName} className="shrink-0" />
                     <div className="flex flex-col">
                         <span className="text-xl text-app-500">
