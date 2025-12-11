@@ -38,7 +38,7 @@ const menus = [
     {
         name: "Profile",
         icon: UserIcon,
-        url: "/profiles"
+        url: "/profile"
     },
 ]
 
