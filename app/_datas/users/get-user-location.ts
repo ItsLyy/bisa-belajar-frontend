@@ -1,9 +1,7 @@
 "server only"
 
 export default async function getUserLocation(latitude: number, longitude: number) {
-    const data = await fetch(`http://api.geonames.org/findNearbyStreetsJSON?lat=${latitude}&lng=${longitude}&username=demo`)
-    const dataJson = await data.json();
-    console.log(dataJson)
+    const response = await fetch(`http://api.geonames.org/findNearestAddressJSON?lat=${latitude}&lng=${longitude}8&username=irly.dev`);
 
-    return dataJson;
+    return (await response.json()).address;
 }

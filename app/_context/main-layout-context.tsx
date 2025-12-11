@@ -1,6 +1,9 @@
 "use client"
 
-import { createContext, Dispatch, DispatchWithoutAction, ReactNode, SetStateAction, useMemo, useState } from "react"
+/**
+ * Node Modules
+ */
+import { createContext, Dispatch, ReactNode, SetStateAction, useMemo, useState } from "react"
 
 interface IMainLayoutContext {
     isSidebarOpen: boolean
@@ -18,7 +21,7 @@ const initialValue = {
 
 export const MainLayoutContext = createContext<IMainLayoutContext>(initialValue)
 
-const MainLayoutProvider = ({ children }: { children: ReactNode }) => {
+const MainLayoutProvider = ({ children }: { children: ReactNode; }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(initialValue.isSidebarOpen);
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
