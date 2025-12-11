@@ -1,0 +1,142 @@
+{
+  "posts": [
+    {
+      "id": "post_001",
+      "user": {
+        "id": "user_001",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password": "$2b$10$hashedpasswordhere",
+        "latitude": -6.2088,
+        "longitude": 106.8456,
+        "score": 250,
+        "avatar_path": "/avatars/john-doe.jpg",
+        "bio": "Full-stack developer passionate about React and Node.js. Love teaching and sharing knowledge with the community.",
+        "skills": [
+          {
+            "id": "skill_001",
+            "name": "React",
+            "category": "Frontend",
+            "description": "Modern JavaScript library for building user interfaces",
+            "timestamps": "2024-01-15T10:30:00Z"
+          }
+        ],
+        "timestamps": "2024-01-15T10:30:00Z"
+      },
+      "threads": [],
+      "title": "React Hooks Best Practices",
+      "content": "When working with React hooks, it's important to follow certain patterns to avoid common pitfalls. Here are some best practices I've learned:",
+      "photo_url": "/posts/react-hooks.jpg",
+      "course": {
+        "id": "course_001",
+        "title": "Complete React Developer Guide",
+        "description": "Master React from basics to advanced concepts",
+        "timestamps": "2024-01-15T10:30:00Z"
+      },
+      "timestamps": "2024-01-20T08:30:00Z"
+    },
+    {
+      "id": "post_002",
+      "user": {
+        "id": "user_002",
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "password": "$2b$10$hashedpasswordhere",
+        "latitude": -6.1751,
+        "longitude": 106.8227,
+        "score": 180,
+        "avatar_path": "/avatars/jane-smith.jpg",
+        "bio": "UI/UX Designer with 5+ years of experience. Specializing in user-centered design and prototyping.",
+        "skills": [
+          {
+            "id": "skill_004",
+            "name": "Figma",
+            "category": "Design Tools",
+            "description": "Collaborative interface design tool",
+            "timestamps": "2024-01-15T11:00:00Z"
+          }
+        ],
+        "timestamps": "2024-01-15T11:00:00Z"
+      },
+      "threads": [
+        {
+          "id": "post_003",
+          "user": {
+            "id": "user_001",
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "password": "$2b$10$hashedpasswordhere",
+            "latitude": -6.2088,
+            "longitude": 106.8456,
+            "score": 250,
+            "avatar_path": "/avatars/john-doe.jpg",
+            "bio": "Full-stack developer passionate about React and Node.js",
+            "skills": [],
+            "timestamps": "2024-01-15T10:30:00Z"
+          },
+          "threads": [],
+          "title": "Re: Design System Components",
+          "content": "Great point about design systems! I've found that creating reusable components early saves a lot of time in the long run.",
+          "timestamps": "2024-01-21T09:15:00Z"
+        }
+      ],
+      "title": "Design System Components: Building Consistency",
+      "content": "Creating a comprehensive design system is crucial for maintaining consistency across large applications. Here's how I approach component design:",
+      "photo_url": "/posts/design-system.jpg",
+      "course": {
+        "id": "course_003",
+        "title": "UI/UX Design Fundamentals",
+        "description": "Comprehensive guide to user interface and user experience design",
+        "timestamps": "2024-01-17T14:20:00Z"
+      },
+      "timestamps": "2024-01-21T08:45:00Z"
+    },
+    {
+      "id": "post_004",
+      "user": {
+        "id": "user_003",
+        "name": "Bob Johnson",
+        "email": "bob.johnson@example.com",
+        "password": "$2b$10$hashedpasswordhere",
+        "latitude": -6.2449,
+        "longitude": 106.8008,
+        "score": 320,
+        "avatar_path": "/avatars/bob-johnson.jpg",
+        "bio": "DevOps Engineer and Cloud Architect. Expert in AWS, Docker, and Kubernetes.",
+        "skills": [],
+        "timestamps": "2024-01-15T12:00:00Z"
+      },
+      "threads": [],
+      "title": "AWS Cost Optimization Strategies",
+      "content": "Cloud costs can spiral out of control without proper monitoring. Here are some effective strategies I've used to optimize AWS spending:",
+      "photo_url": "/posts/aws-cost.jpg",
+      "course": {
+        "id": "course_004",
+        "title": "DevOps with AWS and Docker",
+        "description": "Master DevOps practices using AWS cloud platform",
+        "timestamps": "2024-01-18T16:45:00Z"
+      },
+      "timestamps": "2024-01-22T10:20:00Z"
+    },
+    {
+      "id": "post_005",
+      "user": {
+        "id": "user_001",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password": "$2b$10$hashedpasswordhere",
+        "latitude": -6.2088,
+        "longitude": 106.8456,
+        "score": 250,
+        "avatar_path": "/avatars/john-doe.jpg",
+        "bio": "Full-stack developer passionate about React and Node.js",
+        "skills": [],
+        "timestamps": "2024-01-15T10:30:00Z"
+      },
+      "threads": [],
+      "title": "TypeScript Utility Types Deep Dive",
+      "content": "TypeScript's utility types are incredibly powerful. Let me share some advanced patterns I've discovered:",
+      "timestamps": "2024-01-23T14:30:00Z"
+    }
+  ]
+}

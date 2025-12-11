@@ -1,0 +1,109 @@
+{
+  "users": [
+    {
+      "id": "user_001",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "$2b$10$hashedpasswordhere",
+      "latitude": -6.2088,
+      "longitude": 106.8456,
+      "score": 250,
+      "avatar_path": "/avatars/john-doe.jpg",
+      "bio": "Full-stack developer passionate about React and Node.js. Love teaching and sharing knowledge with the community.",
+      "skills": [
+        {
+          "id": "skill_001",
+          "name": "React",
+          "category": "Frontend",
+          "description": "Modern JavaScript library for building user interfaces",
+          "timestamps": "2024-01-15T10:30:00Z"
+        },
+        {
+          "id": "skill_002",
+          "name": "Node.js",
+          "category": "Backend",
+          "description": "JavaScript runtime built on Chrome's V8 JavaScript engine",
+          "timestamps": "2024-01-15T10:30:00Z"
+        },
+        {
+          "id": "skill_003",
+          "name": "TypeScript",
+          "category": "Programming Language",
+          "description": "Typed superset of JavaScript that compiles to plain JavaScript",
+          "timestamps": "2024-01-15T10:30:00Z"
+        }
+      ],
+      "timestamps": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "user_002",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "$2b$10$hashedpasswordhere",
+      "latitude": -6.1751,
+      "longitude": 106.8227,
+      "score": 180,
+      "avatar_path": "/avatars/jane-smith.jpg",
+      "bio": "UI/UX Designer with 5+ years of experience. Specializing in user-centered design and prototyping.",
+      "skills": [
+        {
+          "id": "skill_004",
+          "name": "Figma",
+          "category": "Design Tools",
+          "description": "Collaborative interface design tool",
+          "timestamps": "2024-01-15T11:00:00Z"
+        },
+        {
+          "id": "skill_005",
+          "name": "Adobe XD",
+          "category": "Design Tools",
+          "description": "UX/UI design and prototyping tool",
+          "timestamps": "2024-01-15T11:00:00Z"
+        },
+        {
+          "id": "skill_006",
+          "name": "Sketch",
+          "category": "Design Tools",
+          "description": "Digital design toolkit for Mac",
+          "timestamps": "2024-01-15T11:00:00Z"
+        }
+      ],
+      "timestamps": "2024-01-15T11:00:00Z"
+    },
+    {
+      "id": "user_003",
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "password": "$2b$10$hashedpasswordhere",
+      "latitude": -6.2449,
+      "longitude": 106.8008,
+      "score": 320,
+      "avatar_path": "/avatars/bob-johnson.jpg",
+      "bio": "DevOps Engineer and Cloud Architect. Expert in AWS, Docker, and Kubernetes.",
+      "skills": [
+        {
+          "id": "skill_007",
+          "name": "AWS",
+          "category": "Cloud",
+          "description": "Amazon Web Services cloud computing platform",
+          "timestamps": "2024-01-15T12:00:00Z"
+        },
+        {
+          "id": "skill_008",
+          "name": "Docker",
+          "category": "Containerization",
+          "description": "Platform for developing, shipping, and running applications in containers",
+          "timestamps": "2024-01-15T12:00:00Z"
+        },
+        {
+          "id": "skill_009",
+          "name": "Kubernetes",
+          "category": "Orchestration",
+          "description": "Open-source container orchestration platform",
+          "timestamps": "2024-01-15T12:00:00Z"
+        }
+      ],
+      "timestamps": "2024-01-15T12:00:00Z"
+    }
+  ]
+}
