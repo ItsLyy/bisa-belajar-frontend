@@ -12,6 +12,7 @@ import "./globals.css";
  * Types
  */
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   variable: "--font-robot-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${roboto.variable} antialiased`}
       >
         {children}
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   );

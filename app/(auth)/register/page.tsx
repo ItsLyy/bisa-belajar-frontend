@@ -1,12 +1,7 @@
 /**
- * Node Modules
- */
-import Link from "next/link";
-
-/**
  * Components
  */
-import InputField from "@/app/_components/ui/form/input-field";
+import RegisterForm from "./_components/register-form";
 
 /**
  * Types
@@ -24,16 +19,7 @@ export default function RegisterPage() {
             <h1 className="text-app-500 text-2xl">Register</h1>
             <span className="text-app-300/60">Please fill the credential bellow.</span>
         </header>
-        <form action="" className="space-y-3">
-            <InputField id="user-name" label="Name" placeholder="e.g. user" />
-            <InputField id="user-email" label="Email" placeholder="e.g. user@example.com" />
-            <InputField id="user-password" label="Password" type="password" />
-            <InputField id="user-password-confirmation" label="Password Confirmation" type="password" />
-            <div className="space-y-1 mt-16">
-                <button className="p-2 rounded-md w-full bg-app-200 text-app-500 font-medium">Register</button>
-                <span className="text-sm text-app-300/60">Already have an account? <Link href="/login" className="text-app-200 hover:underline">Login here</Link></span>
-            </div>
-        </form>
+        <RegisterForm />
     </section>
   )
 }
