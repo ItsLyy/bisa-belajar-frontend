@@ -22,7 +22,12 @@ export const metadata: Metadata = {
 
 export default async function ProfilePage() {
   const user = await getMe();
-  const location = await getUserLocation(user.latitude, user.longitude);
+
+  const locationPromise = user?.latitude && user?.longitude
+    ? getUserLocation(user.latitude, user.longitude)
+    : Promise.resolve(null);
+
+  const [location] = await Promise.all([locationPromise]);
 
   return (
     <section className="space-y-3">
@@ -32,7 +37,13 @@ export default async function ProfilePage() {
           score={user?.score || 0}
         />
         <h1 className="font-semibold text-sm text-app-300/60">SETTINGS</h1>
-        <SettingList bio={user.bio} skills={user.skills.map((item: { name: string }) => item.name)} longitude={user.longitude} latitude={user.latitude} location={location} />
+        <SettingList
+          bio={user?.bio || ""}
+          skills={user?.skills?.map((item: { name: string }) => item.name) || []}
+          longitude={user?.longitude || 0}
+          latitude={user?.latitude || 0}
+          location={location || { placename: "Unknown", street: "Location not available" }}
+        />
         <LogoutButton />
     </section>
   )
