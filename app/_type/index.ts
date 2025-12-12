@@ -43,3 +43,27 @@ export interface ISkill {
     created_at: string;
     updated_at: string;
 }
+
+export interface IChat {
+    id: string;
+    participants: IUser[];
+    last_message?: {
+        content: string;
+        timestamp: string;
+        sender: IUser;
+    };
+    unread_count: number;
+    created_at: string;
+    updated_at: string;
+}
+
+export interface ISwap {
+    id: number;
+    requester: IUser;
+    requester_skill: ISkill;
+    requested_skill?: ISkill;
+    description?: string;
+    status: 'pending' | 'accepted' | 'declined' | 'completed';
+    created_at: string;
+    updated_at: string;
+}

@@ -25,6 +25,7 @@ const Content = ({ postId, title, content, photoUrl, priority = false }: IConten
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover rounded-md"
+                unoptimized={photoUrl.includes("localhost")}
                 priority={priority}
               />
             </div>

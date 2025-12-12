@@ -29,7 +29,7 @@ const RequestList = ({ swaps }) => {
                     <RequestCard 
                         name={swap.requester.name} 
                         id={swap.id} 
-                        score={0} 
+                        score={swap.requester.score} 
                         skill={swap.requester_skill.name} 
                         avatar_path={swap.requester.avatar_path} 
                         description={swap.requester_skill.description} 

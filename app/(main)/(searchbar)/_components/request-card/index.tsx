@@ -31,7 +31,7 @@ const RequestCard = ({ id, name, avatar_path, score, skill, description }: IRequ
             </header>
             <p>{description}</p>
             <div className='flex justify-end'>
-                <Link href={`/swaps/request/${id}`} className='py-2 px-4 rounded-md text-sm bg-app-200/20 text-app-200 font-medium'>CHECK</Link>
+                <Link href={`/swaps/${id}`} className='py-2 px-4 rounded-md text-sm bg-app-200/20 text-app-200 font-medium'>CHECK</Link>
             </div>
         </Card>
     )

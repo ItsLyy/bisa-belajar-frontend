@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: "Bisa Belajar",
   description: "Bisa Belajar is application for people to learn and trade skills with ease.",
   authors: [{ name: "Lyy and Zen", url: "https://bisa-belajar.com" }],
+  manifest: "/manifest",
 };
 
 export default function RootLayout({

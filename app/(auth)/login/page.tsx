@@ -2,6 +2,7 @@
  * Components
  */
 import LoginForm from "./_components/login-form";
+import RedirectMessage from "./_components/redirect-message";
 
 /**
  * Types
@@ -19,6 +20,10 @@ export default function LoginPage() {
             <h1 className="text-app-500 text-2xl">Login</h1>
             <span className="text-app-300/60">Please fill the credential bellow.</span>
         </header>
+
+        {/* Show redirect message if user was redirected here */}
+        <RedirectMessage />
+
         <LoginForm />
     </section>
   )

@@ -18,6 +18,20 @@ import AuthProvider from '../_context/auth-layout'
 
 export default async function MainLayout({ children }: { children: React.ReactNode }) {
   const user = await getMe();
+
+  // If no user data, this shouldn't happen due to middleware,
+  // but provide a fallback for safety
+  if (!user) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <h1 className="text-2xl text-app-500 font-bold mb-2">Authentication Required</h1>
+          <p className="text-app-300">Please log in to access this page.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <MainLayoutProvider>
       <AuthProvider userData={user}>

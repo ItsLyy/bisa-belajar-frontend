@@ -15,7 +15,6 @@ import Tags from "./tags"
 import type { ICourse } from "@/app/_type"
 
 const CourseCard = ({ title, id, created_at, updated_at, owner, image_url = "/", skills }: ICourse) => {
-  console.log(owner)
   return (
     <Link href={`/courses/${id}`} className="flex flex-col overflow-hidden rounded-xl border border-app-300/20">
         <div className="aspect-video w-full relative">

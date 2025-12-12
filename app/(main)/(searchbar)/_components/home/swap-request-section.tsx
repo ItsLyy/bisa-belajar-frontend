@@ -7,10 +7,9 @@ import RequestList from "../request-list"
 
 const SwapRequestSection = async () => {
   const swaps = await getAllSwaps();
-  console.log(swaps)
   return (
     <section>
-        <h2 className="text-sm text-app-300/60 mb-2">REQUEST</h2>
+        <h1 className="text-sm text-app-300/60 mb-2 font-semibold">CURRENT REQUEST</h1>
         <RequestList swaps={swaps.data} />
     </section>
   )
