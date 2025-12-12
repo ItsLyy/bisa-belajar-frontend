@@ -16,7 +16,11 @@ export interface ICourse {
     id: string;
     title: string;
     description: string;
-    timestamps: string;
+    image_url: string;
+    owner: IUser;
+    skills: ISkill[];
+    created_at: string;
+    updated_at: string;
 }
 
 export interface IPost {
@@ -27,7 +31,8 @@ export interface IPost {
     content: string;
     photo_url?: string;
     course?: ICourse;
-    timestamps: string;
+    created_at: string;
+    updated_at: string;
 }
 
 export interface ISkill {
@@ -35,5 +40,6 @@ export interface ISkill {
     name: string;
     category: string;
     description: string;
-    timestamps: string;
+    created_at: string;
+    updated_at: string;
 }

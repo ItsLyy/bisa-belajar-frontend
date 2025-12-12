@@ -1,0 +1,45 @@
+"server only"
+
+/**
+ * Node Modules
+ */
+import { cookies } from "next/headers";
+
+export async function getAllDiscoveryCourses(page: string) {
+    try {
+        const cookiesStore = await cookies();
+        const accessToken = cookiesStore.get("access-token");
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/courses?page=${page || "1"}`, {
+            headers: {
+                "Content-Type": "application/json",
+                accept: "application/json",
+                Authorization: `Bearer ${accessToken?.value}`
+            },
+        })
+        if (!response.ok) return;
+        return await response.json();
+    } catch (error) {
+        console.log("Error from fetch courses", error);
+    }
+}
+
+export async function getAllEnrolledCourses() {
+    try {
+        const cookiesStore = await cookies();
+        const accessToken = cookiesStore.get("access-token");
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/me/courses`, {
+            headers: {
+                "Content-Type": "application/json",
+                accept: "application/json",
+                Authorization: `Bearer ${accessToken?.value}`
+            },
+        })
+
+        if (!response.ok) return;
+        return await response.json();
+    } catch (error) {
+        console.log("Error from fetch courses", error);
+    }
+}

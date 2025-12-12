@@ -1,12 +1,15 @@
 /**
  * Components
  */
+import { getAllPosts } from "@/app/_datas/posts/get-all-posts";
 import PostList from "../post-list"
 
-const PostSection = () => {
+const PostSection = async () => {
+    const posts = await getAllPosts();
+    
     return (
         <section className="pb-16">
-            <PostList />
+            <PostList posts={posts?.data} />
         </section>
     )
 }
