@@ -1,6 +1,18 @@
-import type { Metadata } from "next";
+/**
+ * Node Modules
+ */
 import { Roboto } from "next/font/google";
+
+/**
+ * Styles
+ */
 import "./globals.css";
+
+/**
+ * Types
+ */
+import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   variable: "--font-robot-sans",
@@ -11,6 +23,7 @@ export const metadata: Metadata = {
   title: "Bisa Belajar",
   description: "Bisa Belajar is application for people to learn and trade skills with ease.",
   authors: [{ name: "Lyy and Zen", url: "https://bisa-belajar.com" }],
+  manifest: "/manifest",
 };
 
 export default function RootLayout({
@@ -24,6 +37,7 @@ export default function RootLayout({
         className={`${roboto.variable} antialiased`}
       >
         {children}
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   );
