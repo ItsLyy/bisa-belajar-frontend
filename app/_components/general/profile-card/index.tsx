@@ -15,14 +15,14 @@ import Avatar from '@/app/_components/general/avatar'
 import type { IUser } from '@/app/_type'
 
 
-type TUserData = Pick<IUser, "name" | "longitude" | "latitude" | "bio" | "skills" | "avatar_path">
+type TUserData = Pick<IUser, "id" | "name" | "longitude" | "latitude" | "bio" | "skills" | "avatar_path">
 interface IProfileCardProps extends TUserData {
 
 }
 
-const ProfileCard = async({ name, bio, longitude, latitude, skills, avatar_path }: IProfileCardProps) => {
+const ProfileCard = async({ id, name, bio, longitude, latitude, skills, avatar_path }: IProfileCardProps) => {
   return (
-    <Link href={`/profile/${name}`} className='w-full p-4 rounded-2xl border border-app-300/20 flex gap-5'>
+    <Link href={`/profile/${id}`} className='w-full p-4 rounded-2xl border border-app-300/20 flex gap-5'>
         <Avatar name={name} imageUrl={avatar_path} className='size-14! shrink-0' />
         <div>
           <h2 className='text-app-500 text-lg'>{name}</h2>

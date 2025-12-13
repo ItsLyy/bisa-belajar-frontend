@@ -17,7 +17,7 @@ interface IHeaderProps extends TUserData {
 const Header = ({ id, name, avatar_path, skills }: IHeaderProps) => {
     return (
         <header>
-            <Link href={`/users/${id}`} className="flex gap-4 items-center">
+            <Link href={`/profile/${id}`} className="flex gap-4 items-center">
                 <Avatar name={name} imageUrl={avatar_path} className="shrink-0" />
                 <div className="space-y-1 max-w-full pt-2">
                     <h2 className="leading-[77%] text-lg text-app-400">{name}</h2>

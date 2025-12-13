@@ -11,7 +11,7 @@ import Footer from './footer'
  */
 import type { IUser, IPost } from '@/app/_type'
 
-type TPostData = Pick<IPost, "id" | "title" | "content" | "timestamps" | "photo_url">
+type TPostData = Pick<IPost, "id" | "title" | "content" | "created_at" | "photo_url">
 type TUserData = Pick<IUser, "id" | "name" | "avatar_path" | "skills">
 
 interface IPostCardProps extends TPostData {
@@ -19,12 +19,12 @@ interface IPostCardProps extends TPostData {
   priority?: boolean;
 }
 
-const PostCard = ({ id, title, content, timestamps, photo_url, user, priority = false }: IPostCardProps) => {
+const PostCard = ({ id, title, content, created_at, photo_url, user, priority = false }: IPostCardProps) => {
   return (
-      <Card className='bg-transparent border-2 border-app-150 p-4 space-y-4'>
+      <Card className='bg-transparent border-2 border-app-150 p-4'>
           <Header id={user.id} name={user.name} skills={user.skills?.map(skill => skill.name)} />
           <Content title={title} postId={id} content={content} photoUrl={photo_url} priority={priority} />
-          <Footer threads={20} date={timestamps} />
+          <Footer threads={20} date={created_at} />
       </Card>
   )
 }

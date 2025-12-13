@@ -2,6 +2,7 @@
 
 import { cache } from "react";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const getMe = cache(async () => {
     try {
@@ -16,9 +17,8 @@ export const getMe = cache(async () => {
             },
         });
         
-        if (!res.ok) return;
-
         const resJson = await res.json();
+
         return resJson;
     } catch (error) {
         console.log("Error in get auth me", error)

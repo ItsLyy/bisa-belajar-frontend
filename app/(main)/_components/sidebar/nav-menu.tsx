@@ -30,11 +30,11 @@ const menus = [
         icon: ChatsTeardropIcon,
         url: "/chats"
     },
-    {
-        name: "Notification",
-        icon: BellIcon,
-        url: "/notifications"
-    },
+    // {
+    //     name: "Notification",
+    //     icon: BellIcon,
+    //     url: "/notifications"
+    // },
     {
         name: "Profile",
         icon: UserIcon,

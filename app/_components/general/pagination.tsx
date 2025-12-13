@@ -8,12 +8,11 @@ import { useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
 
 interface IPaginationProps {
-    page: number; 
-    pathname?: string
-    searchParams?: { [key: string]: string | undefined }
+    lastPage: number;
+    pathname?: string;
 }
 
-const Pagination = ({ pathname = "" }: IPaginationProps ) => {
+const Pagination = ({ pathname = "", lastPage }: IPaginationProps ) => {
     const searchParams = useSearchParams();
     const page = parseInt(searchParams.get("page") || "1");
     
@@ -49,16 +48,19 @@ const Pagination = ({ pathname = "" }: IPaginationProps ) => {
         <div className='size-12 rounded-md flex items-center justify-center bg-app-200 text-app-500'>
             {currentPageNumber}
         </div>
-        <Link 
-            href={{
-                pathname,
-                search: createQueryString("page", nextPageNumber.toString()),
-            }}
-            shallow
-            className='size-12 rounded-md flex items-center justify-center'
-        >
-            {nextPageNumber}
-        </Link>
+        {
+            nextPageNumber < lastPage &&
+            <Link 
+                href={{
+                    pathname,
+                    search: createQueryString("page", nextPageNumber.toString()),
+                }}
+                shallow
+                className='size-12 rounded-md flex items-center justify-center'
+            >
+                {nextPageNumber}
+            </Link>
+        }
     </div>
   )
 }

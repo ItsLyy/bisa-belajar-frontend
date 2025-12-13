@@ -5,7 +5,7 @@
  */
 import { useActionState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 /**
  * Actions
@@ -26,6 +26,9 @@ interface LoginState {
 
 const LoginForm = () => {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const redirectPath = searchParams.get('redirect') || '/';
+
     const [state, action, loading] = useActionState(loginAction, undefined as LoginState | undefined)
 
     useEffect(() => {
@@ -33,14 +36,15 @@ const LoginForm = () => {
             toast.success("Login successful! Welcome to Bisa Belajar!", {
                 duration: 3000,
             });
-            router.push("/");
+            // Redirect to the intended page or home
+            router.push(redirectPath);
         } else if (state?.error) {
             toast.error("Login failed", {
                 description: state.error,
                 duration: 5000,
             });
         }
-    }, [state, router]);
+    }, [state, router, redirectPath]);
 
     return (
         <form action={action} className="space-y-3">
