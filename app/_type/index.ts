@@ -63,7 +63,7 @@ export interface ISwap {
     requester_skill: ISkill;
     requested_skill?: ISkill;
     description?: string;
-    status: 'pending' | 'accepted' | 'declined' | 'completed';
+    status: 'pending' | 'accepted' | 'declined' | 'completed' | 'cancelled';
     created_at: string;
     updated_at: string;
 }

@@ -8,7 +8,7 @@ import { CheckIcon, XIcon, ClockIcon } from '@phosphor-icons/react/dist/ssr';
 /**
  * Actions
  */
-import { acceptSwap, declineSwap, completeSwap } from '../actions';
+import { acceptSwap, declineSwap, completeSwap, cancelSwap, updateSwap } from '../../actions';
 
 /**
  * Types
@@ -20,6 +20,37 @@ interface ISwapActionsProps {
 }
 
 const SwapActions = ({ swap }: ISwapActionsProps) => {
+    // Handle accept action
+    const handleAccept = async () => {
+        const result = await acceptSwap(swap.id);
+        if (!result.success) {
+            console.error('Failed to accept swap:', result.message);
+        }
+    };
+
+    // Handle decline action
+    const handleDecline = async () => {
+        const result = await declineSwap(swap.id);
+        if (!result.success) {
+            console.error('Failed to decline swap:', result.message);
+        }
+    };
+
+    // Handle complete action
+    const handleComplete = async () => {
+        const result = await completeSwap(swap.id);
+        if (!result.success) {
+            console.error('Failed to complete swap:', result.message);
+        }
+    };
+
+    // Handle cancel action (for pending swaps by requester)
+    const handleCancel = async () => {
+        const result = await cancelSwap(swap.id);
+        if (!result.success) {
+            console.error('Failed to cancel swap:', result.message);
+        }
+    };
 
     if (swap.status === 'completed') {
         return (
@@ -35,6 +66,15 @@ const SwapActions = ({ swap }: ISwapActionsProps) => {
             <div className="flex items-center gap-2 text-red-400 bg-red-500/10 px-4 py-3 rounded-xl border border-red-500/20">
                 <XIcon className="size-5" />
                 <span className="font-medium">Swap Declined</span>
+            </div>
+        );
+    }
+
+    if (swap.status === 'cancelled') {
+        return (
+            <div className="flex items-center gap-2 text-gray-400 bg-gray-500/10 px-4 py-3 rounded-xl border border-gray-500/20">
+                <XIcon className="size-5" />
+                <span className="font-medium">Swap Cancelled</span>
             </div>
         );
     }
@@ -61,38 +101,46 @@ const SwapActions = ({ swap }: ISwapActionsProps) => {
         );
     }
 
-    // Pending status - show accept/decline buttons
+    // Pending status - different actions based on whether you're the requester or recipient
+    // For now, we'll show both accept/decline and cancel options
+    // In a real app, you'd check if current user is the recipient or requester
     return (
         <div className="space-y-3">
             <div className="flex items-center gap-2 text-yellow-400 bg-yellow-500/10 px-4 py-3 rounded-xl border border-yellow-500/20">
                 <ClockIcon className="size-5" />
-                <span className="font-medium">Waiting for your response</span>
+                <span className="font-medium">
+                    {swap.status === 'pending' ? 'Waiting for response' : 'Swap in progress'}
+                </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-                <form action={async () => {
-                    await acceptSwap(swap.id);
-                }}>
+            <div className="space-y-3">
+                {/* Accept/Decline buttons (for recipient) */}
+                <div className="grid grid-cols-2 gap-3">
                     <button
-                        type="submit"
+                        onClick={handleAccept}
                         className="w-full bg-green-500/20 hover:bg-green-500/30 text-green-400 font-medium py-3 px-4 rounded-xl border border-green-500/30 transition-colors flex items-center justify-center gap-2"
                     >
                         <CheckIcon className="size-5" />
                         Accept
                     </button>
-                </form>
 
-                <form action={async () => {
-                    await declineSwap(swap.id);
-                }}>
                     <button
-                        type="submit"
+                        onClick={handleDecline}
                         className="w-full bg-red-500/20 hover:bg-red-500/30 text-red-400 font-medium py-3 px-4 rounded-xl border border-red-500/30 transition-colors flex items-center justify-center gap-2"
                     >
                         <XIcon className="size-5" />
                         Decline
                     </button>
-                </form>
+                </div>
+
+                {/* Cancel button (for requester) */}
+                <button
+                    onClick={handleCancel}
+                    className="w-full bg-gray-500/20 hover:bg-gray-500/30 text-gray-400 font-medium py-3 px-4 rounded-xl border border-gray-500/30 transition-colors flex items-center justify-center gap-2"
+                >
+                    <XIcon className="size-5" />
+                    Cancel Request
+                </button>
             </div>
         </div>
     );
