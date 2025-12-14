@@ -1,10 +1,9 @@
 "server only"
 
-import { cache } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export const getMe = cache(async () => {
+export const getMe = async () => {
     try {
         const cookiesStore = await cookies();
         const accessToken = cookiesStore.get("access-token");
@@ -17,10 +16,13 @@ export const getMe = cache(async () => {
             },
         });
         
+        if (!res.ok) {
+            return redirect("/login")
+        }
+        
         const resJson = await res.json();
-
         return resJson;
     } catch (error) {
         console.log("Error in get auth me", error)
     }
-})
+}
